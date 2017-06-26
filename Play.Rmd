@@ -1,0 +1,52 @@
+---
+title: "Play"
+author: "Nora"
+date: "`r format(Sys.Date(),'%d %B %Y')`"
+output: 
+    html_document:
+    theme: yeti
+    code_folding: hide
+    toc: true
+    toc_float: true
+---
+
+# Level 1 Header
+
+## Level 2 Header
+
+### Level 3 Header
+
+**Bold** *italic* normal
+
+
+![Emma Wood](Aardvark.jpg) 
+
+
+[**IUCN SSC Aardvarks**](http://aardvarkafrica.org)
+
+```{r}
+foo <- rnorm(1000)
+bar <-  foo + jitter(foo)
+plot(bar)
+
+plot(foo, col = 'blue')
+points(bar, col = 'green')
+boxplot(foo)
+
+baz <- data.frame(data = foo,
+                    name = (rep(c('A', 'B'), 500)),
+                    size = rbinom(1000, size = 1, 
+                                  prob = 0.5))
+
+boxplot(baz$size ~ baz$name)
+hist(baz$size)
+
+```
+
+```{r}
+#use a normal distribution with 1000 samples and plot them
+hist(rnorm(1000))
+abline(v = mean(rnorm(1000)))
+```
+
+## New Header
